@@ -15,7 +15,7 @@ Yi Wang, Ulrike Naumann, Stephen Wright, Dirk Eddelbuettel and David Warton
 LGPL (>= 2.1)
 
 #### Installation
-
+ 
 `mvabund` is [available on CRAN](https://CRAN.R-project.org/package=mvabund).
 
 The development version, with the latest bells and whistles, can be installed from GitHub using the `devtools` package:
