@@ -97,236 +97,16 @@ using <code>Tasmania$copepods</code> or the <code><a href="https://rdrr.io/r/bas
 function which will make the contents of <code>Tasmania</code>
 searchable.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mvabund</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://fontikar.github.io/mvabund/">mvabund</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Tasmania</span><span class="op">)</span> </span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/attach.html" class="external-link">attach</a></span><span class="op">(</span><span class="va">Tasmania</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">skimr</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html" class="external-link">skim</a></span><span class="op">(</span><span class="va">copepods</span><span class="op">)</span> <span class="co"># Great function to get an overview of the data</span></span></code></pre></div>
-<table class="table">
-<caption>Data summary</caption>
-<tbody>
-<tr class="odd">
-<td align="left">Name</td>
-<td align="left">copepods</td>
-</tr>
-<tr class="even">
-<td align="left">Number of rows</td>
-<td align="left">16</td>
-</tr>
-<tr class="odd">
-<td align="left">Number of columns</td>
-<td align="left">12</td>
-</tr>
-<tr class="even">
-<td align="left">_______________________</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Column type frequency:</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">numeric</td>
-<td align="left">12</td>
-</tr>
-<tr class="odd">
-<td align="left">________________________</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Group variables</td>
-<td align="left">None</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table style="width:100%;" class="table">
-<colgroup>
-<col width="17%">
-<col width="12%">
-<col width="17%">
-<col width="7%">
-<col width="7%">
-<col width="3%">
-<col width="6%">
-<col width="6%">
-<col width="7%">
-<col width="6%">
-<col width="7%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">skim_variable</th>
-<th align="right">n_missing</th>
-<th align="right">complete_rate</th>
-<th align="right">mean</th>
-<th align="right">sd</th>
-<th align="right">p0</th>
-<th align="right">p25</th>
-<th align="right">p50</th>
-<th align="right">p75</th>
-<th align="right">p100</th>
-<th align="left">hist</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Ameira</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">55.44</td>
-<td align="right">46.60</td>
-<td align="right">4</td>
-<td align="right">6.75</td>
-<td align="right">58.5</td>
-<td align="right">92.25</td>
-<td align="right">142</td>
-<td align="left">▇▂▃▃▂</td>
-</tr>
-<tr class="even">
-<td align="left">Adopsyllus</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0.69</td>
-<td align="right">1.25</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">1.00</td>
-<td align="right">4</td>
-<td align="left">▇▂▁▁▁</td>
-</tr>
-<tr class="odd">
-<td align="left">Ectinosoma</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1.31</td>
-<td align="right">2.30</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">1.25</td>
-<td align="right">7</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td align="left">Ectinosomat</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4.50</td>
-<td align="right">4.46</td>
-<td align="right">0</td>
-<td align="right">1.00</td>
-<td align="right">3.5</td>
-<td align="right">5.50</td>
-<td align="right">15</td>
-<td align="left">▇▃▂▁▂</td>
-</tr>
-<tr class="odd">
-<td align="left">Haloschizo</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0.12</td>
-<td align="right">0.50</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">0.00</td>
-<td align="right">2</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td align="left">Lepta.A</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">40.69</td>
-<td align="right">47.15</td>
-<td align="right">0</td>
-<td align="right">3.00</td>
-<td align="right">28.0</td>
-<td align="right">57.25</td>
-<td align="right">151</td>
-<td align="left">▇▂▁▂▁</td>
-</tr>
-<tr class="odd">
-<td align="left">Lepta.B</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1.44</td>
-<td align="right">2.92</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">1.25</td>
-<td align="right">11</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td align="left">Lepta.C</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">12.75</td>
-<td align="right">44.73</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">1.50</td>
-<td align="right">180</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="odd">
-<td align="left">Mictyricola</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1.31</td>
-<td align="right">2.33</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">1.50</td>
-<td align="right">8</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td align="left">Parevansula</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0.25</td>
-<td align="right">0.58</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">0.00</td>
-<td align="right">2</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="odd">
-<td align="left">Quin</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0.44</td>
-<td align="right">0.96</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">0.00</td>
-<td align="right">3</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td align="left">Rhizothrix</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">0.81</td>
-<td align="right">2.04</td>
-<td align="right">0</td>
-<td align="right">0.00</td>
-<td align="right">0.0</td>
-<td align="right">0.00</td>
-<td align="right">6</td>
-<td align="left">▇▁▁▁▁</td>
-</tr>
-</tbody>
-</table>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">copepods</span><span class="op">)</span> </span>
+<span><span class="co">#&gt;  int [1:16, 1:12] 43 63 124 105 4 5 91 57 7 6 ...</span></span>
+<span><span class="co">#&gt;  - attr(*, "dimnames")=List of 2</span></span>
+<span><span class="co">#&gt;   ..$ : chr [1:16] "B1D1" "B1D2" "B1U1" "B1U2" ...</span></span>
+<span><span class="co">#&gt;   ..$ : chr [1:12] "Ameira" "Adopsyllus" "Ectinosoma" "Ectinosomat" ...</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="visualise-the-multivariate-data">Visualise the multivariate data<a class="anchor" aria-label="anchor" href="#visualise-the-multivariate-data"></a>
@@ -409,9 +189,9 @@ for multiple testing of different species.</p>
 <span><span class="co">#&gt; Multivariate test:</span></span>
 <span><span class="co">#&gt;                 Res.Df Df.diff    Dev Pr(&gt;Dev)    </span></span>
 <span><span class="co">#&gt; (Intercept)         15                            </span></span>
-<span><span class="co">#&gt; treatment           14       1  32.52    0.042 *  </span></span>
+<span><span class="co">#&gt; treatment           14       1  32.52    0.051 .  </span></span>
 <span><span class="co">#&gt; block               11       3 151.87    0.001 ***</span></span>
-<span><span class="co">#&gt; treatment:block      8       3  37.41    0.073 .  </span></span>
+<span><span class="co">#&gt; treatment:block      8       3  37.41    0.082 .  </span></span>
 <span><span class="co">#&gt; ---</span></span>
 <span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -419,27 +199,27 @@ for multiple testing of different species.</p>
 <span><span class="co">#&gt;                 Ameira          Adopsyllus          Ectinosoma         </span></span>
 <span><span class="co">#&gt;                    Dev Pr(&gt;Dev)        Dev Pr(&gt;Dev)        Dev Pr(&gt;Dev)</span></span>
 <span><span class="co">#&gt; (Intercept)                                                            </span></span>
-<span><span class="co">#&gt; treatment        6.257    0.173      0.032    0.972      7.026    0.146</span></span>
-<span><span class="co">#&gt; block           12.615    0.153     17.691    0.048     15.361    0.073</span></span>
-<span><span class="co">#&gt; treatment:block  6.349    0.499      1.295    0.882      0.836    0.882</span></span>
+<span><span class="co">#&gt; treatment        6.257    0.191      0.032    0.977      7.026    0.162</span></span>
+<span><span class="co">#&gt; block           12.615    0.145     17.691    0.052     15.361    0.069</span></span>
+<span><span class="co">#&gt; treatment:block  6.349    0.504      1.295    0.894      0.836    0.894</span></span>
 <span><span class="co">#&gt;                 Ectinosomat          Haloschizo          Lepta.A         </span></span>
 <span><span class="co">#&gt;                         Dev Pr(&gt;Dev)        Dev Pr(&gt;Dev)     Dev Pr(&gt;Dev)</span></span>
 <span><span class="co">#&gt; (Intercept)                                                              </span></span>
-<span><span class="co">#&gt; treatment             0.366    0.953      1.497    0.822   0.281    0.953</span></span>
-<span><span class="co">#&gt; block                 10.92    0.184      3.742    0.184  20.756    0.017</span></span>
-<span><span class="co">#&gt; treatment:block       1.122    0.882          0    0.882  13.072    0.169</span></span>
+<span><span class="co">#&gt; treatment             0.366    0.945      1.497    0.837   0.281    0.945</span></span>
+<span><span class="co">#&gt; block                 10.92    0.172      3.742    0.187  20.756    0.022</span></span>
+<span><span class="co">#&gt; treatment:block       1.122    0.894          0    0.894  13.072    0.185</span></span>
 <span><span class="co">#&gt;                 Lepta.B          Lepta.C          Mictyricola         </span></span>
 <span><span class="co">#&gt;                     Dev Pr(&gt;Dev)     Dev Pr(&gt;Dev)         Dev Pr(&gt;Dev)</span></span>
 <span><span class="co">#&gt; (Intercept)                                                           </span></span>
-<span><span class="co">#&gt; treatment         0.575    0.953   2.141    0.758       7.093    0.146</span></span>
-<span><span class="co">#&gt; block               8.8    0.184  17.419    0.051      11.415    0.184</span></span>
-<span><span class="co">#&gt; treatment:block   7.402    0.461    0.34    0.882       5.268    0.499</span></span>
+<span><span class="co">#&gt; treatment         0.575    0.936   2.141    0.761       7.093    0.162</span></span>
+<span><span class="co">#&gt; block               8.8    0.172  17.419    0.053      11.415    0.172</span></span>
+<span><span class="co">#&gt; treatment:block   7.402    0.430    0.34    0.894       5.268    0.504</span></span>
 <span><span class="co">#&gt;                 Parevansula           Quin          Rhizothrix         </span></span>
 <span><span class="co">#&gt;                         Dev Pr(&gt;Dev)   Dev Pr(&gt;Dev)        Dev Pr(&gt;Dev)</span></span>
 <span><span class="co">#&gt; (Intercept)                                                            </span></span>
-<span><span class="co">#&gt; treatment                 0    0.972 5.385    0.233      1.869    0.758</span></span>
-<span><span class="co">#&gt; block                   6.1    0.184  9.44    0.184     17.613    0.051</span></span>
-<span><span class="co">#&gt; treatment:block       1.726    0.847     0    0.882          0    0.882</span></span>
+<span><span class="co">#&gt; treatment                 0    0.977 5.385    0.245      1.869    0.761</span></span>
+<span><span class="co">#&gt; block                   6.1    0.172  9.44    0.172     17.613    0.053</span></span>
+<span><span class="co">#&gt; treatment:block       1.726    0.858     0    0.894          0    0.894</span></span>
 <span><span class="co">#&gt; Arguments:</span></span>
 <span><span class="co">#&gt;  Test statistics calculated assuming uncorrelated response (for faster computation) </span></span>
 <span><span class="co">#&gt; P-value calculated using 999 iterations via PIT-trap resampling.</span></span></code></pre></div>
@@ -464,17 +244,17 @@ zero.</p>
 <span><span class="co">#&gt; Test statistics:</span></span>
 <span><span class="co">#&gt;                             wald value Pr(&gt;wald)    </span></span>
 <span><span class="co">#&gt; (Intercept)                     18.493     0.001 ***</span></span>
-<span><span class="co">#&gt; treatmentUndisturbed             3.330     0.258    </span></span>
-<span><span class="co">#&gt; block2                           4.710     0.048 *  </span></span>
+<span><span class="co">#&gt; treatmentUndisturbed             3.330     0.227    </span></span>
+<span><span class="co">#&gt; block2                           4.710     0.047 *  </span></span>
 <span><span class="co">#&gt; block3                           6.650     0.001 ***</span></span>
-<span><span class="co">#&gt; block4                           3.435     0.157    </span></span>
-<span><span class="co">#&gt; treatmentUndisturbed:block2      2.747     0.264    </span></span>
-<span><span class="co">#&gt; treatmentUndisturbed:block3      1.615     0.427    </span></span>
-<span><span class="co">#&gt; treatmentUndisturbed:block4      4.262     0.046 *  </span></span>
+<span><span class="co">#&gt; block4                           3.435     0.147    </span></span>
+<span><span class="co">#&gt; treatmentUndisturbed:block2      2.747     0.291    </span></span>
+<span><span class="co">#&gt; treatmentUndisturbed:block3      1.615     0.466    </span></span>
+<span><span class="co">#&gt; treatmentUndisturbed:block4      4.262     0.050 *  </span></span>
 <span><span class="co">#&gt; --- </span></span>
 <span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 </span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Test statistic:  14.81, p-value: 0.003 </span></span>
+<span><span class="co">#&gt; Test statistic:  14.81, p-value: 0.002 </span></span>
 <span><span class="co">#&gt; Arguments:</span></span>
 <span><span class="co">#&gt;  Test statistics calculated assuming response assumed to be uncorrelated </span></span>
 <span><span class="co">#&gt;  P-value calculated using 999 resampling iterations via pit.trap resampling (to account for correlation in testing).</span></span></code></pre></div>

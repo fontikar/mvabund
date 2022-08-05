@@ -30,7 +30,6 @@ Imports:
     statmod,
     parallel
 Suggest:
-    skimr
     ecostats
 LinkingTo: 
     Rcpp,

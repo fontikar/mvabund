@@ -147,92 +147,14 @@ function of treatment (bush regeneration) while accounting variation in
 sampling effort.</p>
 <p>Lets load <code>mvabund</code> and the dataset first:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mvabund</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://fontikar.github.io/mvabund/">mvabund</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">ecostats</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error: package 'mvabund' required by 'ecostats' could not be found</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">reveg</span><span class="op">)</span> </span>
+<span><span class="co">#&gt; Warning in data(reveg): data set 'reveg' not found</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/attach.html" class="external-link">attach</a></span><span class="op">(</span><span class="va">reveg</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">skimr</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html" class="external-link">skim</a></span><span class="op">(</span><span class="va">abund</span><span class="op">$</span><span class="va">Haplotaxida</span><span class="op">)</span> <span class="co"># Great function to get an overview of the data</span></span></code></pre></div>
-<table class="table">
-<caption>Data summary</caption>
-<tbody>
-<tr class="odd">
-<td align="left">Name</td>
-<td align="left">abund$Haplotaxida</td>
-</tr>
-<tr class="even">
-<td align="left">Number of rows</td>
-<td align="left">10</td>
-</tr>
-<tr class="odd">
-<td align="left">Number of columns</td>
-<td align="left">1</td>
-</tr>
-<tr class="even">
-<td align="left">_______________________</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Column type frequency:</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">numeric</td>
-<td align="left">1</td>
-</tr>
-<tr class="odd">
-<td align="left">________________________</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Group variables</td>
-<td align="left">None</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table class="table">
-<colgroup>
-<col width="18%">
-<col width="13%">
-<col width="18%">
-<col width="6%">
-<col width="6%">
-<col width="4%">
-<col width="5%">
-<col width="5%">
-<col width="5%">
-<col width="6%">
-<col width="8%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">skim_variable</th>
-<th align="right">n_missing</th>
-<th align="right">complete_rate</th>
-<th align="right">mean</th>
-<th align="right">sd</th>
-<th align="right">p0</th>
-<th align="right">p25</th>
-<th align="right">p50</th>
-<th align="right">p75</th>
-<th align="right">p100</th>
-<th align="left">hist</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="left">data</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4.1</td>
-<td align="right">6.01</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1.5</td>
-<td align="right">3</td>
-<td align="right">18</td>
-<td align="left">▇▁▁▁▁</td>
-</tr></tbody>
-</table>
+<span><span class="co">#&gt; Error in attach(reveg): object 'reveg' not found</span></span></code></pre></div>
 <p>Now we will use the <code>manyglm</code> function. We specified
 <code>family =  "negative.binomial"</code> as count data tends to follow
 a negative binomial distribution. We have also included an offset term
@@ -247,18 +169,10 @@ achieves this without messing with the data and its mean-variance
 relationship.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">worms_offset</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/manyglm.html">manyglm</a></span><span class="op">(</span><span class="va">Haplotaxida</span><span class="op">~</span><span class="va">treatment</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/stats/offset.html" class="external-link">offset</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="va">pitfalls</span><span class="op">)</span><span class="op">)</span>, family<span class="op">=</span><span class="st">"negative.binomial"</span>, data<span class="op">=</span><span class="va">abund</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in is.data.frame(data): object 'abund' not found</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html" class="external-link">anova</a></span><span class="op">(</span><span class="va">worms_offset</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Time elapsed: 0 hr 0 min 0 sec</span></span>
-<span><span class="co">#&gt; Analysis of Deviance Table</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Model: Haplotaxida ~ treatment + offset(log(pitfalls))</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Multivariate test:</span></span>
-<span><span class="co">#&gt;             Res.Df Df.diff   Dev Pr(&gt;Dev)</span></span>
-<span><span class="co">#&gt; (Intercept)      9                       </span></span>
-<span><span class="co">#&gt; treatment        8       1 2.889     0.15</span></span>
-<span><span class="co">#&gt; Arguments: P-value calculated using 999 iterations via PIT-trap resampling.</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in anova(worms_offset): object 'worms_offset' not found</span></span></code></pre></div>
   </main>
 </div>
 

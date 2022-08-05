@@ -29,7 +29,7 @@ library(mvabund)
 data(Tasmania) 
 attach(Tasmania)
 
-skimr::skim(copepods) # Great function to get an overview of the data
+str(copepods) 
 ```
 
 ### Visualise the multivariate data 
