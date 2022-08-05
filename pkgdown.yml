@@ -1,0 +1,11 @@
+pandoc: 2.14.2
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  Offsets: Offsets.html
+  mvabund: mvabund.html
+last_built: 2022-08-05T06:33Z
+urls:
+  reference: https://fontikar.github.io/mvabund/reference
+  article: https://fontikar.github.io/mvabund/articles
+
