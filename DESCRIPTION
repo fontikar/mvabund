@@ -45,3 +45,4 @@ Suggests:
     testthat
 VignetteBuilder: knitr
 LazyData: true
+URL: https://fontikar.github.io/mvabund/

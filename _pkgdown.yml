@@ -1,23 +1,25 @@
-url: ~
+url: https://fontikar.github.io/mvabund/
 template:
   bootstrap: 5
   bootswatch: flatly
-  
 development:
   mode: release
-
 navbar:
   structure:
-    left:  [intro, reference, articles]
-    right: [search, github]
-  components: 
+    left:
+    - intro
+    - reference
+    - articles
+    right:
+    - search
+    - github
+  components:
     reference:
       text: Functions glossary
       href: reference/index.html
     github:
       icon: fab fa-github fa-lg
       href: https://github.com/aliceyiwang/mvabund
-      
 reference:
 - title: Included datasets
 - contents:
@@ -55,4 +57,4 @@ reference:
   - starts_with("residuals")
   - ends_with("plot")
   - shiftpoints
-  
+
